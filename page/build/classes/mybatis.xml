@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<typeAliases>
+		<package name="com.bjsxt.pojo"/>   <!-- 起别名  方便在配置的xml里面直接返回值就可以只写类名-->
+	</typeAliases>
+	
+	<environments default="default">
+		<environment id="default">
+			<transactionManager type="JDBC"></transactionManager>
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.jdbc.Driver"/>
+				<property name="url" value="jdbc:mysql://localhost:3306/ssm"/>
+				<property name="username" value="root"/>
+				<property name="password" value="njdxrjgc7777777."/>
+			</dataSource>
+		</environment>
+	</environments>
+	
+	<mappers>
+		<mapper resource="com/bjsxt/mapper/PeopleMapper.xml"/>  <!-- 直接调用配置文件  执行sql语句 -->
+	</mappers>
+	
+</configuration>
